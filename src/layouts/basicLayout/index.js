@@ -20,8 +20,8 @@ const { SubMenu } = Menu;
 const { Header, Content, Sider, Footer } = Layout;
 export default memo(function index() {
   return (
-    <div>
-      <Layout>
+   
+      <Layout className="layout-container">
         <Header className="header">
           <div className="logo" />
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
@@ -81,6 +81,5 @@ export default memo(function index() {
           </Layout>
         </Layout>
       </Layout>
-    </div>
   );
 });
