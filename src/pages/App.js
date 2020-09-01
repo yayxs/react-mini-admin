@@ -12,7 +12,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import DocumentTitle from "react-document-title";
 import BaseLayout from "../layouts/basicLayout";
 import { adminRoutes } from "../router/index";
-
+import { isLogined } from "../utils/auth";
 import "../styles/App.scss";
 const App = memo(function App(props) {
   const [title, setTitle] = useState("welcome");
@@ -20,17 +20,29 @@ const App = memo(function App(props) {
   return (
     <>
       <DocumentTitle title={title}>
+        {isLogined()?
         <BaseLayout>
           <Switch>
             {adminRoutes.map((route) => (
-              <Route key={route.path} path={route.path} exact={route.exact} render={props=>(
-                <route.component { ...props} />
-              ) }></Route>
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+                render={(props) => <route.component {...props} />}
+              ></Route>
             ))}
+            <Redirect to={adminRoutes[0].path} from="/admin" />
             {/* 都未命中 */}
             <Redirect to="/404" />
           </Switch>
         </BaseLayout>
+        :(
+        <Redirect
+          to={{
+            pathname: "/login",
+          }}
+        />
+        )}
       </DocumentTitle>
     </>
   );

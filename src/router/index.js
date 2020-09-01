@@ -9,8 +9,8 @@
  */
 import Login from "../pages/user/login";
 import NoFoundPage from "../pages/404";
-import Dashboard from "../components/dashboard";
-import ListComp from "../components/ui/list";
+import Dashboard from "../components/dashboard/Dashboard";
+import BasicTable from "../components/tables/BasicTable";
 export const mainRoutes = [
   {
     path: "/login",
@@ -22,12 +22,12 @@ export const mainRoutes = [
   },
 ];
 export const adminRoutes = [
+  { path: '/admin/dashboard', title: '看板', icon: 'mobile', component: Dashboard, },
   {
-    path: "/admin/dashboard",
-    component: Dashboard,
-  },
-  {
-    path: "/admin/lists",
-    component: ListComp,
-  },
+    path: '/admin/table',
+    title: '表格',
+    subs: [
+        { path: '/admin/table/basicTable', title: '基础表格', component: BasicTable },
+    ],
+},
 ];

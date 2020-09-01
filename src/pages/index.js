@@ -14,14 +14,14 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-
+import  PrivateRoute  from '../router/PrivateRoute'
 import App from "./App";
 import { mainRoutes } from "../router";
 const RootPage = memo(function RootPage(props) {
   return (
     <Router>
       <Switch>
-        {/* 访问/admin  渲染APP*/}
+        {/* 访问/admin  渲染APP 是需要登录才能访问*/}
         <Route path="/admin" render={(props) => <App {...props} />}></Route>
         {mainRoutes.map((item) => (
           <Route
@@ -30,6 +30,8 @@ const RootPage = memo(function RootPage(props) {
             component={item.component}
           ></Route>
         ))}
+        {/* 访问跟路径直接重定向到admin */}
+        <Redirect to="/admin" from="/" />
         {/* 404 页面 */}
         <Redirect to="/404" />
       </Switch>

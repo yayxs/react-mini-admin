@@ -1,3 +1,22 @@
-.layout-container{
-    height:100%
+.layout-container {
+  height: 100%;
+  .header {
+    background-color: #313653;
+  }
+  .layout_sider {
+    .ant-layout-sider-children {
+      .ant-menu {
+        background-color: #313653;
+        .ant-menu-submenu-title {
+          color: #fff;
+          .ant-menu-item .ant-menu-item-only-child{
+              color: #fff;
+          }
+        }
+        .ant-menu-item-selected{
+            background-color: #ccc;
+        }
+      }
+    }
+  }
 }
