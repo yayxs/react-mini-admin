@@ -8,36 +8,46 @@
  * @
  */
 import React, { memo } from "react";
-import { useHistory,useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from "react-router-dom";
 import { Form, Input, Button, Checkbox, Card } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import axios from 'axios'
+import axios from "axios";
 // import { fakeAuth } from '../../../utils/config';
+import comLocalStorage from "../../../utils/comLocalStorage";
 import { setToken } from "../../../utils/auth";
 import "./index.scss";
 const LoginPage = memo(function LoginPage(props) {
-
   const history = useHistory();
   const location = useLocation();
-  console.log(location)
+  console.log(location);
   // 其中 from {pathname: "/"}
   const { from } = location.state || { from: { pathname: "/admin" } };
 
-  console.log(from)
+  console.log(from);
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
     // 修改状态仅仅模拟
-
-    setTimeout(()=>{
-      setToken(`200`)
-
-      axios(`/api/login/account`).then(res=>{
-        console.log(res)
-      }).catch(err=>{
-        console.log(err)
+    const params = {
+      userName: "admin",
+      password: "admin",
+    };
+    axios
+      .post(`/api/login/account`, {
+        userName: "admin",
+        password: "admin",
+        type: "hah",
       })
-      // history.replace(from);
-    },200)
+      .then((res) => {
+        console.log(res);
+
+        comLocalStorage.set("token", `123`);
+        history.replace(from);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // history.replace(from);
+
     // fakeAuth.authenticate(()=>{
     //   history.replace(from);
     // })

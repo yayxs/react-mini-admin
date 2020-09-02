@@ -1,0 +1,30 @@
+.admin_content {
+  .admin_cont {
+    // border: 1px solid black;
+    .ant-form {
+      .my_editor {
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid rgba(190, 202, 212, 1);
+        border-radius: 2px;
+        .bf-controlbar {
+          background-color: #f6f6f6;
+        }
+        .bf-content {
+          background-color: #fff;
+        }
+      }
+      //  .warpper_con{
+      //      display: flex;
+      //      .radios{
+      //         width: 140px;
+      //         border: 1px solid red;
+      //     }
+      //     .selectedTime{
+      //         width: 200px;
+      //         border: 1px solid red;
+      //     }
+      //  }
+    }
+  }
+}

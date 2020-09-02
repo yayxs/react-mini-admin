@@ -15,6 +15,39 @@
 
 - [Creat React app 从 0 搭建基于 antd mock Redux Toolkit 的 admin 中后台解决方案 (一)](https://github.com/yayxs/react-cra-admin/tree/master/docs)
 
+
+## Table of Contents
+
+```sh
+├── config
+│   ├── webpack.config.js     # webpack 配置
+├── docs                      # 文档教程
+│   ├── ReactRouterDoc
+│   └── README.md
+├── examples
+│   └── react-router-learning # 路由学习 与本案例无直接关系
+├── jsconfig.json
+├── LICENSE
+├── mockServer.js             # Mock 数据
+├── package.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── README.md
+├── src
+│   ├── components          # 封装共用组件
+│   ├── index.js            # 跟入口
+│   ├── layouts             # 布局视图
+│   ├── pages               # 页面
+│   ├── router              # 路由配置
+│   ├── setupProxy.js       # proxy 代理
+│   ├── styles              # 样式文件
+│   └── utils               # 工具人
+└── yarn.lock
+
+```
+
+
 ## Install
 
 ```sh
