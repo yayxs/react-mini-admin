@@ -11,6 +11,7 @@ import React, { memo } from "react";
 import { useHistory,useLocation } from 'react-router-dom'
 import { Form, Input, Button, Checkbox, Card } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import axios from 'axios'
 // import { fakeAuth } from '../../../utils/config';
 import { setToken } from "../../../utils/auth";
 import "./index.scss";
@@ -29,7 +30,13 @@ const LoginPage = memo(function LoginPage(props) {
 
     setTimeout(()=>{
       setToken(`200`)
-      history.replace(from);
+
+      axios(`/api/login/account`).then(res=>{
+        console.log(res)
+      }).catch(err=>{
+        console.log(err)
+      })
+      // history.replace(from);
     },200)
     // fakeAuth.authenticate(()=>{
     //   history.replace(from);

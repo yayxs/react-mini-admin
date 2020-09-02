@@ -1,16 +1,17 @@
 import React, { memo } from "react";
 import { Breadcrumb } from "antd";
-export default memo(function BreadcrumbComp() {
+import { Link } from "react-router-dom";
+export default memo(function BreadcrumbComp({ first, second }) {
+const FirstComp = <Breadcrumb.Item>{first}</Breadcrumb.Item> || "";
+const SecondComp = <Breadcrumb.Item>{second}</Breadcrumb.Item> || "";
   return (
     <div>
-      <Breadcrumb>
-        <Breadcrumb.Item>首页</Breadcrumb.Item>
+      <Breadcrumb style={{ margin: "12px 0" }}>
         <Breadcrumb.Item>
-          <a href="">表单</a>
+          <Link to={"/admin/dashboard"}></Link>
         </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <a href="">基本表单</a>
-        </Breadcrumb.Item>
+        {FirstComp}
+        {SecondComp}
       </Breadcrumb>
     </div>
   );

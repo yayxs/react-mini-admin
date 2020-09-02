@@ -11,4 +11,5 @@ import React from "react";
 import ReactDOM from "react-dom";
 import RootPage from "./pages";
 import "antd/dist/antd.css";
+
 ReactDOM.render(<RootPage />, document.getElementById("root"));
