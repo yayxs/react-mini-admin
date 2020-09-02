@@ -8,18 +8,27 @@
  * @
  */
 import React, { memo } from "react";
+import { withRouter} from 'react-router-dom'
 import { Layout, Menu, Breadcrumb, Avatar } from "antd";
 import {
-  UserOutlined,
+  MailOutlined,
   LaptopOutlined,
   NotificationOutlined,
 } from "@ant-design/icons";
-import { adminRoutes } from "../../router";
+import routesConfig from "../../router/config";
 
 import "./index.scss";
 const { SubMenu } = Menu;
 const { Header, Content, Sider, Footer } = Layout;
-export default memo(function index({ children }) {
+
+
+const BasicLayout = ({ children ,history})=>{
+
+  const handleClickMenuItem = ({key}) => {
+    
+    // 其中key是/admin/table/basicTable
+    history.push(key)
+  };
   return (
     <Layout className="layout-container">
       <Header className="header">
@@ -35,18 +44,28 @@ export default memo(function index({ children }) {
       <Layout>
         <Sider width={200} className="layout_sider">
           <Menu
+            
             mode="inline"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
+            // defaultSelectedKeys={["1"]}
+            // defaultOpenKeys={["sub1"]}
             style={{ height: "100%", borderRight: 0 }}
           >
-            {adminRoutes.map((item) => {
+            {routesConfig['menus'].map((item) => {
+              
               return (
-                <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
-                  <Menu.Item key="1">option1</Menu.Item>
-                  <Menu.Item key="2">option2</Menu.Item>
-                  <Menu.Item key="3">option3</Menu.Item>
-                  <Menu.Item key="4">option4</Menu.Item>
+                <SubMenu
+                  key={item.path}
+                  title={
+                    <span>
+                      <MailOutlined />
+                      <span>{item.title}</span>
+                    </span>
+                  }
+                >
+                  {item.subs &&
+                    item.subs.map((sub) => {
+                      return <Menu.Item   onClick={(p)=>handleClickMenuItem(p)} key={sub.path}>{sub.title}</Menu.Item>;
+                    })}
                 </SubMenu>
               );
             })}
@@ -72,4 +91,8 @@ export default memo(function index({ children }) {
       </Layout>
     </Layout>
   );
-});
+
+}
+
+
+export default withRouter(BasicLayout ) ;

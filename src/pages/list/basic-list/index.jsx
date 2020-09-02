@@ -1,9 +1,11 @@
 import React, { memo } from 'react'
-
+import BreadcrumbComp from 'components/breadcrumb'
 export default memo(function BasicTable() {
     return (
         <div>
-            基本表格
+            <BreadcrumbComp></BreadcrumbComp>
+            123
         </div>
     )
 })
+
