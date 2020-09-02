@@ -19,7 +19,7 @@
 
 我们重点讨论的是 `React` ，不得不提的是`vue` 关于 `admin` 的解决方案，社区里有很多成熟优雅大方的，包括上文提到的
 
-- `[PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)`
-- `[vueComponent/ant-design-vue](https://github.com/vueComponent/ant-design-vue)`
+- [PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+- [vueComponent/ant-design-vue](https://github.com/vueComponent/ant-design-vue)
 
 但是从`create raect app` 的角度出发，并且弹出`webpack` 的配置（注意官方是不建议直接弹出的）修改`webpack` 的配置也是有其他的方案，请自行搜索。采用的更多的方案是更成熟的一套 `umijs` 
