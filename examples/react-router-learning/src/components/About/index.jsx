@@ -1,6 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo , useEffect} from 'react'
+import {useParams } from 'react-router-dom'
+export default memo(function Index() {
 
-export default memo(function index() {
+    const params = useParams()
+   
+
+    console.log(params)
     return (
         <div>
             这是关于

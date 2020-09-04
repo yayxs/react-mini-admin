@@ -1,6 +1,7 @@
 ## 前言
 
 ### 背景
+
 为了更好的服务于开源的`网易云项目` ，特此在 `admin 实践中` 分析路由相关的 `API` 完整的代码 请移步 `examples/react-router-learning`
 
 ### 未来
@@ -39,7 +40,11 @@ function SomeComponent() {
 
 ### 基本
 
-页面不刷新，但是路由总是最新，`Switch` 遍历所有的子元素，只用匹配的一条渲染
+页面不刷新，但是路由总是最新，`Switch` 遍历所有的子元素，只用匹配的一条渲染。其中使用的 `Link` 标签总是被实际渲染为`a` 标签
+
+```html
+<a href="/about"></a>
+```
 
 > 完整的代码案例
 
@@ -82,10 +87,10 @@ function SomeComponent() {
     isShow: false
   },
 ```
-官方给我的示例如下，通过`useParams` 来获取url 中的动态参数
+
+官方给我的示例如下，通过`useParams` 来获取 url 中的动态参数
 
 ```js
-
 const ChildPage = () => {
   const { id } = useParams();
   return (
@@ -96,6 +101,7 @@ const ChildPage = () => {
   );
 };
 ```
+
 ```js
 <Router>
   <div className="App">
@@ -114,7 +120,11 @@ const ChildPage = () => {
   </Switch>
 </Router>
 ```
+
+## 嵌套路由
+
 **值得一提的是路由不过是一个简单的组件，和普通的组件相差无异**,也就是说存在嵌套路由的情况，
+
 ```jsx
 const Topic = () => {
   const { path, url } = useRouteMatch();
@@ -143,3 +153,4 @@ const Topic = () => {
   );
 };
 ```
+## 声明式导航 `Link`
