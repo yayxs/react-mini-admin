@@ -8,7 +8,7 @@
  * @
  */
 import React, { memo } from "react";
-import { withRouter} from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 import { Layout, Menu, Breadcrumb, Avatar } from "antd";
 import {
   MailOutlined,
@@ -21,13 +21,10 @@ import "./index.scss";
 const { SubMenu } = Menu;
 const { Header, Content, Sider, Footer } = Layout;
 
-
-const BasicLayout = ({ children ,history})=>{
-
-  const handleClickMenuItem = ({key}) => {
-    
+const BasicLayout = ({ children, history }) => {
+  const handleClickMenuItem = ({ key }) => {
     // 其中key是/admin/table/basicTable
-    history.push(key)
+    history.push(key);
   };
   return (
     <Layout className="layout-container">
@@ -44,14 +41,12 @@ const BasicLayout = ({ children ,history})=>{
       <Layout>
         <Sider width={200} className="layout_sider">
           <Menu
-            
             mode="inline"
             // defaultSelectedKeys={["1"]}
             // defaultOpenKeys={["sub1"]}
             style={{ height: "100%", borderRight: 0 }}
           >
-            {routesConfig['menus'].map((item) => {
-              
+            {routesConfig["menus"].map((item) => {
               return (
                 <SubMenu
                   key={item.path}
@@ -64,7 +59,14 @@ const BasicLayout = ({ children ,history})=>{
                 >
                   {item.subs &&
                     item.subs.map((sub) => {
-                      return <Menu.Item   onClick={(p)=>handleClickMenuItem(p)} key={sub.path}>{sub.title}</Menu.Item>;
+                      return (
+                        <Menu.Item
+                          onClick={(p) => handleClickMenuItem(p)}
+                          key={sub.path}
+                        >
+                          {sub.title}
+                        </Menu.Item>
+                      );
                     })}
                 </SubMenu>
               );
@@ -91,8 +93,6 @@ const BasicLayout = ({ children ,history})=>{
       </Layout>
     </Layout>
   );
+};
 
-}
-
-
-export default withRouter(BasicLayout ) ;
+export default withRouter(BasicLayout);

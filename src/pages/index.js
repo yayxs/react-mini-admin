@@ -14,7 +14,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import  PrivateRoute  from '../router/PrivateRoute'
+import PrivateRoute from "../router/PrivateRoute";
 import App from "./App";
 import routesConfig from "../router/config";
 const RootPage = memo(function RootPage(props) {
@@ -22,10 +22,14 @@ const RootPage = memo(function RootPage(props) {
     <Router>
       <Switch>
         {/* 当访问根据经定位到dashboard*/}
-        <Route path="/"  exact render={()=>  <Redirect to="/admin/dashboard" push />}></Route>
+        <Route
+          path="/"
+          exact
+          render={() => <Redirect to="/admin/dashboard" push />}
+        ></Route>
         {/* 访问/admin  渲染APP 是需要登录才能访问*/}
         <Route path="/admin" render={(props) => <App {...props} />}></Route>
-        {routesConfig['other'].map((item) => (
+        {routesConfig["other"].map((item) => (
           <Route
             key={item.path}
             path={item.path}

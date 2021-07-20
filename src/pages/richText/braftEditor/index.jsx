@@ -121,8 +121,8 @@ const BraftEditorPage = ({ history, location }) => {
   };
 
   function handleClickBack() {
-      message.success('点击了返回')
-      
+    message.success("点击了返回");
+
     // history.goBack();
   }
   const handleFinishSubmit = (val) => {
@@ -168,10 +168,8 @@ const BraftEditorPage = ({ history, location }) => {
   const onFinishFailed = (errorInfo) => {
     // console.log("Failed:", errorInfo);
   };
-  function onGenderChange() {
-  }
+  function onGenderChange() {}
 
- 
   function handleDateChange(val) {
     console.log(val);
     let time = val && val.format("YYYY-MM-DD HH:mm:ss");

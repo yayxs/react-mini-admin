@@ -1,22 +1,22 @@
 .layout-container {
   height: 100%;
   .header {
-    background-color: #00023B;
+    background-color: #00023b;
   }
   .layout_sider {
     .ant-layout-sider-children {
       .ant-menu {
-        background-color: #00023B;
+        background-color: #00023b;
         .ant-menu-submenu-title {
           color: #fff;
-          .ant-menu-item .ant-menu-item-only-child{
-              color: #fff;
+          .ant-menu-item .ant-menu-item-only-child {
+            color: #fff;
           }
         }
-        .ant-menu-item-selected{
-            background-color: #ccc;
+        .ant-menu-item-selected {
+          background-color: #ccc;
         }
-        .ant-menu-item{
+        .ant-menu-item {
           color: #fff;
         }
       }

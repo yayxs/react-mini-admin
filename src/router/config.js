@@ -11,7 +11,7 @@ import Login from "../pages/user/login";
 import NoFoundPage from "../pages/404";
 import Dashboard from "../pages/dashboard/analysis";
 import BasicTable from "../pages/list/basic-list/index";
-import BraftEditorPage from '../pages/richText/braftEditor'
+import BraftEditorPage from "../pages/richText/braftEditor";
 export default {
   menus: [
     {

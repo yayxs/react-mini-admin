@@ -27,8 +27,7 @@ const App = memo(function App(props) {
       {isLogined() ? (
         <BaseLayout>
           <Switch>
-           
-            {routesConfig['menus'].map((route) => (
+            {routesConfig["menus"].map((route) => (
               <Route
                 key={route.path}
                 path={route.path}
@@ -36,7 +35,7 @@ const App = memo(function App(props) {
                 render={(props) => <route.component {...props} />}
               ></Route>
             ))}
-            <Redirect to={routesConfig['menus'][0].path} from="/admin" />
+            <Redirect to={routesConfig["menus"][0].path} from="/admin" />
             {/* 都未命中 */}
             <Redirect to="/404" />
           </Switch>

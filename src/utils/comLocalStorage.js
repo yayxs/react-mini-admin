@@ -1,6 +1,6 @@
 /*
  * @Author: yayxs
- * @Date: 
+ * @Date:
  * @Description: 封装本地存储
  */
 const localStore = window.localStorage;
