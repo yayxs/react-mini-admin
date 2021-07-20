@@ -11,12 +11,21 @@
 
 > **基于`create react app` 和 `antd` 的后台管理系统解决方案**
 
+## Getting Started
+
+### Quick Start
+
+```bash
+yarn start
+```
+
+### Available Scripts
+
 ## Tutorials
 
 - [Creat React app 从 0 搭建基于 antd mock Redux Toolkit 的 admin 中后台解决方案 (一)](https://github.com/yayxs/react-cra-admin/tree/master/docs)
 
-
-## Table of Contents
+## Folder Structure
 
 ```sh
 ├── config
@@ -32,7 +41,7 @@
 ├── package.json
 ├── public
 │   ├── favicon.ico
-│   └── index.html
+│   └── index.html          # 页面模板
 ├── README.md
 ├── src
 │   ├── components          # 封装共用组件
@@ -47,34 +56,11 @@
 
 ```
 
-
-## Install
-
-```sh
-yarn install
-```
-
-## Usage
-
-```sh
-yarn mock // mock 接口
-```
-
-```sh
-yarn run start
-```
-
-## Run tests
-
-```sh
-yarn run test
-```
-
 ## Author
 
 👤 **yayxs**
 
-- Website: https://yayxs.github.io/
+- Website: [http://vast.icu Filing](http://vast.icu)
 - Github: [@yayxs](https://github.com/yayxs)
 
 ## 🤝 Contributing
@@ -84,3 +70,39 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+## Before Eject
+
+```json
+{
+  "name": "react-cra-admin",
+  "version": "0.0.2",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": ["react-app", "react-app/jest"]
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+```
