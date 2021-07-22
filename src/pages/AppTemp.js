@@ -15,7 +15,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import DocumentTitle from "react-document-title";
-import BaseLayout from "../layouts/basicLayout";
+import BaseLayout from "../layouts/BasicLayout";
 import routesConfig from "../router/config.js";
 import { isLogined } from "../utils/auth";
 import "../styles/App.scss";

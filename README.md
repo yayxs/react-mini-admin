@@ -21,6 +21,11 @@ yarn start
 
 ### Available Scripts
 
+```bash
+npm start
+
+```
+
 ## Tutorials
 
 - [Creat React app 从 0 搭建基于 antd mock Redux Toolkit 的 admin 中后台解决方案 (一)](https://github.com/yayxs/react-cra-admin/tree/master/docs)
