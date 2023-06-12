@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to react-cra-admin 👋</h1>
+<h1 align="center">Welcome to React-Mini-Admin 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/yayxs/react-cra-admin/tree/master/docs" target="_blank">
